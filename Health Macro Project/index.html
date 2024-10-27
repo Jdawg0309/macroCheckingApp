@@ -4,54 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macro and Calorie Tracking</title>
-    <link rel="stylesheet" href="formDecoration.css">
+    <link rel="stylesheet" href="./CSS/formDecoration.css">
 </head>
 <body>
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <h1 class="navbar-title">Macro Fitness</h1>
+        </ul>
+    </nav>
 
-<nav id="">
-    <h1>Macro and Calorie Tracker</h1>
-</nav>
+    <form id="tracking-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
 
-<form id="tracking-form" action="http://localhost:3000/submit" method="POST">
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
+        <label for="meal">Meal Type:</label>
+        <select id="meal" name="meal" required>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="snack">Snack</option>
+        </select>
 
-    <label for="meal">Meal Type:</label>
-    <select id="meal" name="meal" required>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
-        <option value="snack">Snack</option>
-    </select>
+        <label for="food-item">Food Item:</label>
+        <input type="text" id="food-item" name="food-item" required>
 
-    <label for="food-item">Food Item:</label>
-    <input type="text" id="food-item" name="food-item" required>
+        <label for="servings">Servings:</label>
+        <input type="text" id="servings" name="servings" required>
 
-    <label for="calories">Calories:</label>
-    <input type="number" id="calories" name="calories" required>
+        <label for="calories">Calories Per Serving:</label>
+        <input type="number" id="calories" name="calories" required>
 
-    <label for="servings">Servings</label>
-    <input type="number" id="servings" name="servings" required>
-    
-    <label for="protein">Protein (g):</label>
-    <input type="number" id="protein" name="protein">
+        <label for="protein">Protein (g):</label>
+        <input type="number" id="protein" name="protein">
 
-    <label for="carbs">Carbohydrates (g):</label>
-    <input type="number" id="carbs" name="carbs">
+        <label for="carbs">Carbohydrates (g):</label>
+        <input type="number" id="carbs" name="carbs">
 
-    <label for="fats">Fats (g):</label>
-    <input type="number" id="fats" name="fats">
+        <label for="fats">Fats (g):</label>
+        <input type="number" id="fats" name="fats">
 
-    <button type="submit">Add Entry</button>
-</form>
+        <button type="submit">Add Entry</button>
+    </form>
 
-<script>
-    document.getElementById('tracking-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Handle form submission (e.g., send data to backend)
-        console.log('Form submitted:', new FormData(this));
-    });
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>
